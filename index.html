@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MUHAMMAD SAEED | Digital App Portfolio</title>
+  <title>MUHAMMAD SAEED | Digital Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -17,103 +17,100 @@
     }
 
     body{
-      background:#0b0f1a;
       height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-
-    .app{
-      width:360px;
-      height:720px;
-      background:#111827;
-      border-radius:35px;
-      box-shadow:0 0 40px rgba(0,0,0,0.8);
       overflow:hidden;
       display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      color:white;
-      padding:18px;
+      align-items:center;
+      justify-content:center;
+      background:#05060d;
       position:relative;
     }
 
-    .topbar{
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .blob{
+      position:absolute;
+      width:420px;
+      height:420px;
+      filter:blur(120px);
+      opacity:0.6;
+      animation:move 12s infinite alternate;
+      z-index:0;
     }
 
-    .logo{
-      width:42px;
-      height:42px;
-      background:linear-gradient(135deg,#ff4d8d,#00e5ff);
-      border-radius:12px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:bold;
+    .blob1{background:#ff4d8d; top:-120px; left:-120px;}
+    .blob2{background:#00e5ff; bottom:-120px; right:-120px; animation-delay:2s;}
+    .blob3{background:#ffcc00; top:40%; left:55%; animation-delay:4s;}
+
+    @keyframes move{
+      from{transform:translate(0,0) scale(1);}
+      to{transform:translate(70px,50px) scale(1.2);}
     }
 
-    .title{
-      font-size:13px;
-      opacity:0.8;
-    }
-
-    .profile{
+    .card{
+      width:92%;
+      max-width:900px;
+      padding:50px;
+      border-radius:30px;
+      background:rgba(255,255,255,0.06);
+      backdrop-filter:blur(22px);
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow:0 0 60px rgba(0,0,0,0.6);
       text-align:center;
-      margin-top:10px;
+      color:white;
+      z-index:1;
+      position:relative;
     }
 
     .avatar{
       width:90px;
       height:90px;
       border-radius:50%;
-      margin:10px auto;
+      margin:0 auto 15px;
       background:linear-gradient(135deg,#ff4d8d,#00e5ff);
       display:flex;
       align-items:center;
       justify-content:center;
+      font-weight:700;
       font-size:28px;
-      font-weight:bold;
     }
 
-    .profile h2{
+    h1{
+      font-size:clamp(32px,5vw,60px);
+      background:linear-gradient(90deg,#ffcc00,#ff4d8d,#00e5ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    p{
+      color:#cbd5e1;
+      font-size:16px;
       margin-top:8px;
-      font-size:20px;
+      margin-bottom:25px;
     }
 
-    .profile p{
-      font-size:13px;
-      opacity:0.7;
-    }
-
-    .social{
+    .icons{
       display:flex;
-      flex-direction:column;
-      gap:10px;
-      margin-top:15px;
-      overflow-y:auto;
-      padding-right:5px;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:14px;
     }
 
-    .social a{
-      background:rgba(255,255,255,0.08);
-      padding:12px;
-      border-radius:12px;
+    .icons a{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:50px;
       text-decoration:none;
       color:white;
-      display:flex;
-      gap:10px;
-      align-items:center;
-      transition:0.3s;
       font-size:14px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      transition:0.3s;
     }
 
-    .social a:hover{
-      transform:scale(1.03);
-      background:rgba(255,255,255,0.15);
+    .icons a:hover{
+      transform:translateY(-6px);
+      background:rgba(255,255,255,0.18);
     }
 
     .instagram i{color:#ff4d8d;}
@@ -122,88 +119,97 @@
     .facebook i{color:#1877f2;}
     .snapchat i{color:#fffc00;}
 
-    .bottomnav{
-      display:flex;
-      justify-content:space-around;
-      padding:12px;
-      background:rgba(255,255,255,0.06);
-      border-radius:20px;
-      font-size:12px;
-    }
-
-    .bottomnav div{
-      opacity:0.8;
+    .footer{
+      margin-top:25px;
+      font-style:italic;
+      color:#94a3b8;
+      font-size:15px;
     }
 
     .music{
       position:absolute;
-      top:12px;
-      right:12px;
+      top:15px;
+      right:15px;
+      z-index:2;
     }
 
     .music button{
-      padding:8px 12px;
-      border-radius:20px;
+      padding:10px 16px;
+      border-radius:30px;
       border:none;
       cursor:pointer;
       background:linear-gradient(90deg,#ff4d8d,#00e5ff);
       color:white;
-      font-size:12px;
       font-weight:600;
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
     }
 
-    audio{display:none;}
+    audio{
+      display:none;
+    }
   </style>
 </head>
 <body>
 
-<div class="app">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
 
-  <div class="music">
-    <button onclick="toggleMusic()">🎵 Play</button>
-    <audio id="bgmusic" loop>
-      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
-    </audio>
-  </div>
+  <div class="card">
 
-  <div class="topbar">
-    <div class="logo">MS</div>
-    <div class="title">MUHAMMAD SAEED • Digital App Portfolio</div>
-  </div>
+    <div class="music">
+      <button onclick="toggleMusic()">🎵 Play Music</button>
+      <audio id="bgmusic" autoplay loop muted>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+      </audio>
+    </div>
 
-  <div class="profile">
     <div class="avatar">MS</div>
-    <h2>MUHAMMAD SAEED</h2>
-    <p>Digital Creator • Influencer • Brand Builder</p>
-  </div>
 
-  <div class="social">
-    <a href="https://www.instagram.com/mr_saeed_arain1?igsh=MWt5a294aTR2NmFqMA==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-    <a href="https://www.tiktok.com/@its_me_saeed2?_r=1&_t=ZS-96cY6rfeU1Y" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-    <a href="https://youtube.com/@MuhammadSaeedStudio" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-    <a href="https://www.facebook.com/share/18xWqknwsZ/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-    <a href="https://www.snapchat.com/add/saeedarain20708?share_id=QlFv-35crpM&locale=en-GB" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a>
-  </div>
+    <h1>MUHAMMAD SAEED</h1>
+    <p>Digital Creator • Influencer • Personal Brand Builder</p>
 
-  <div class="bottomnav">
-    <div>🏠 Home</div>
-    <div>⭐ Social</div>
-    <div>👤 Profile</div>
-  </div>
+    <div class="icons">
+      <a class="instagram" href="https://www.instagram.com/mr_saeed_arain1?igsh=MWt5a294aTR2NmFqMA==" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
 
-</div>
+      <a class="tiktok" href="https://www.tiktok.com/@its_me_saeed2?_r=1&_t=ZS-96cY6rfeU1Y" target="_blank">
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+
+      <a class="youtube" href="https://youtube.com/@MuhammadSaeedStudio" target="_blank">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+
+      <a class="facebook" href="https://www.facebook.com/share/18xWqknwsZ/" target="_blank">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+
+      <a class="snapchat" href="https://www.snapchat.com/add/saeedarain20708?share_id=QlFv-35crpM&locale=en-GB" target="_blank">
+        <i class="fab fa-snapchat"></i> Snapchat
+      </a>
+    </div>
+
+    <div class="footer">
+      “Elegance, creativity, and ambition define MUHAMMAD SAEED.”
+    </div>
+
+  </div>
 
 <script>
 function toggleMusic(){
   const music = document.getElementById('bgmusic');
   const btn = document.querySelector('.music button');
 
+  music.muted = false;
+
   if(music.paused){
     music.play();
-    btn.innerHTML = "⏸ Pause";
+    btn.innerHTML = "⏸ Pause Music";
   } else {
     music.pause();
-    btn.innerHTML = "🎵 Play";
+    btn.innerHTML = "🎵 Play Music";
   }
 }
 </script>
